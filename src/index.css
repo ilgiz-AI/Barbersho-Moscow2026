@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@200;300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", "Georgia", serif;
+  --font-sans: "Inter", "Helvetica Neue", "Arial", sans-serif;
+  
+  --color-gold: #d4af37;
+  --color-gold-muted: rgba(212, 175, 55, 0.15);
+  --color-bg-dark: #080808;
+  --color-panel-bg: rgba(20, 20, 20, 0.7);
+}
+
+@layer base {
+  body {
+    @apply bg-bg-dark text-white font-sans antialiased selection:bg-gold selection:text-bg-dark;
+    background-attachment: fixed;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif font-light;
+  }
+}
+
+.immersive-bg {
+  background: radial-gradient(circle at 70% 30%, #1a1a1a 0%, #080808 70%);
+}
+
+.glass-panel {
+  background: var(--color-panel-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--color-gold-muted);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.text-gold {
+  color: #d4af37;
+}
+
+.bg-gold {
+  background-color: #d4af37;
+}
+
+.accent-text {
+  @apply text-gold uppercase tracking-[0.2em] text-[10px] font-semibold;
+}
+
+.logo-mark {
+  @apply w-14 h-14 border-2 border-gold flex items-center justify-center text-gold text-2xl font-serif mb-6;
+}
+
+/* Custom scrollbar for immersive feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
